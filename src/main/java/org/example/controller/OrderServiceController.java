@@ -28,7 +28,7 @@ public class OrderServiceController {
     }
 
     @GetMapping(value = "/orders/{id}")
-    public ResponseEntity<RestApiResponse> userLogin(@PathVariable Integer id) {
+    public ResponseEntity<RestApiResponse> getOrder(@PathVariable Integer id) {
         String refId = utility.generateUUID("GET_ORDER");
         log.info("Get order flow started {} for refId {}", id, refId);
         return orderService.retrieveOrder(id, refId);
